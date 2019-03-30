@@ -44,13 +44,24 @@ app.post("/", function(req, res){
 
     request(options,function(error, response, body){
       if(error){
+        res.sendFile(__dirname + "/failure.html");
         console.log(error);
       }else{
+        if(response.statusCode == 200){
+        res.sendFile(__dirname + "/success.html");
+      }else{
+        res.sendFile(__dirname + "/failure.html");
+      }
         console.log(response.statusCode);
       }
       //console.log(response.statusCode);
     });
   });
-  app.listen(port, function(){
+
+  app.post("/failure", function(req,res){
+    res.redirect("/");
+  });
+
+  app.listen(process.env.PORT || port, function(){
     console.log("Server running on port "+port);
   });
