@@ -1,4 +1,4 @@
-
+//jshint esversion:6
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -21,14 +21,14 @@ app.get("/",function(req,res){
   var today = new Date();
   var date = today.toLocaleDateString("en-US", option);
   res.render("list",{fulldate:date, newListItem:newItems});
-})
+});
 
 app.post("/", function(req,res){
   newItem = req.body.newItem;
-  newItems.push(newItem)
+  newItems.push(newItem);
   res.redirect("/");
-})
+});
 
 app.listen(port, function(){
   console.log("Server running on port "+port);
-})
+});
