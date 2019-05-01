@@ -16,6 +16,21 @@ app.get('/booking', function(req,res){
   res.render('booking_page');
 });
 
+app.get('/admin', function(req,res){
+  res.render('admin_landing');
+})
+
+app.get('/admin_add', function(req,res){
+  res.render('admin_add');
+})
+
+app.get('/admin_edit', function(req,res){
+  res.render('admin_edit');
+})
+
+app.get('/admin_contact', function(req,res){
+  res.render('admin_contact');
+})
 
 app.listen(3000, function(){
   console.log("Server up on port 3000");
