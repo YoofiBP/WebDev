@@ -16,6 +16,10 @@ app.get('/booking', function(req,res){
   res.render('booking_page');
 });
 
+app.get('/admin_login', function(req,res){
+  res.render('admin_login')
+})
+
 app.get('/admin', function(req,res){
   res.render('admin_landing');
 })
